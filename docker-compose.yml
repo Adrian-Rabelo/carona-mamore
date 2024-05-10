@@ -1,0 +1,17 @@
+version: '3'
+services:
+  database:
+    image: postgres
+    restart: always
+    volumes:
+      - carona-mamore-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=carona_mamore
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=carona_mamore
+volumes:
+  carona-mamore-data:
