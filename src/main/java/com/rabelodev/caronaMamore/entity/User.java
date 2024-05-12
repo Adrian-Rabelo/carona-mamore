@@ -1,4 +1,4 @@
-package com.rabelodev.caronaMamore.model;
+package com.rabelodev.caronaMamore.entity;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -28,6 +28,9 @@ public class User {
     @Column(name="name")
     private String name;
 
+    @Column(name="email")
+    private String email;
+
     @Column(name="login")
     private String login;
 
@@ -41,4 +44,9 @@ public class User {
     @UpdateTimestamp
     @Column(name="updated_at")
     private LocalDateTime updated_at;
+
+    @PrePersist
+    protected void onCreate() {
+        setUuid(java.util.UUID.randomUUID());
+    }
 }
