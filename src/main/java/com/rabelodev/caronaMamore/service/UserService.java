@@ -1,6 +1,7 @@
 package com.rabelodev.caronaMamore.service;
 
 import com.rabelodev.caronaMamore.controller.UserController;
+import com.rabelodev.caronaMamore.dto.UserDTO;
 import com.rabelodev.caronaMamore.entity.User;
 import com.rabelodev.caronaMamore.exceptions.NullPasswordException;
 import com.rabelodev.caronaMamore.repository.UserRepository;
@@ -8,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -17,7 +20,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    /***
+    /**
      * Create a new user and saves on database
      * @param repository
      * @param createUser
@@ -30,7 +33,12 @@ public class UserService {
         return repository.save(createUser);
     }
 
-    /***
+    public List<UserDTO> getUsers() {
+        return repository.findAllDtoBy();
+    }
+
+
+    /**
      * Validates user data
      * @param user
      * @throws NullPasswordException
@@ -51,4 +59,5 @@ public class UserService {
             throw new IllegalArgumentException("Invalid password");
         }
     }
+
 }
