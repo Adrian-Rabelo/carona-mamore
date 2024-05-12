@@ -39,11 +39,11 @@ public class User {
 
     @CreationTimestamp
     @Column(name="created_at")
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name="updated_at")
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
