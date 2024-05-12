@@ -1,10 +1,10 @@
 package com.rabelodev.caronaMamore.model;
 
-import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -21,8 +21,7 @@ public class User {
     @Column(name="id")
     private int id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="uuid", unique = true)
     private UUID uuid;
 
