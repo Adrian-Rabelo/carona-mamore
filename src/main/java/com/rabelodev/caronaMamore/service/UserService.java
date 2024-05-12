@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -34,7 +35,18 @@ public class UserService {
     }
 
     public List<UserDTO> getUsers() {
-        return repository.findAllDtoBy();
+        return repository.findAllDtoByOrderByIdAsc();
+    }
+
+    public Optional<User> updateUser(Long id, User updateUser){
+        return repository.findById(id)
+                .map(existingUser -> {
+                    existingUser.setName(updateUser.getName());
+                    existingUser.setEmail(updateUser.getEmail());
+                    existingUser.setLogin(updateUser.getLogin());
+
+                    return repository.save(existingUser);
+                });
     }
 
 

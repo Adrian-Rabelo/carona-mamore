@@ -12,5 +12,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findByNameLike(String name);
 
-    List<UserDTO> findAllDtoBy();
+    List<UserDTO> findAllDtoByOrderByIdAsc();
 }
