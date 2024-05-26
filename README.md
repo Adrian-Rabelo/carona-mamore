@@ -1,11 +1,10 @@
 # Carona Mamoré
----
+
 API em desenvolvimento para a aplicação mobile/web que visa atender aos munícipes do estado de **Rondônia**
 
 ## TODO: criar um sumário para este README
 
 ## Um breve resumo :writing_hand:
----
 
 Desde a criação da Uber, a forma de se locomover mudou drásticamente no âmbito mundial. Vemos também tecnologia semelhantes criadas diáriamente.
 
@@ -16,9 +15,8 @@ Porém, dificilmente vemos essas tecnologias em ação em locais ~~inóspitos~~ 
    - na maioria dos casos (digo isso por experiência), a distância de um ponto a outro é cerca de menos de 1km.
  - Custo alto para a população, dados os fatos anteriores
    - imagine uma empresa que aloca um pedaço do seu sistema num lugar em que pouca gente irá usar e, quando utilizar, será por um curto período. Faz um certo sentido que a empresa **eleve o custo de utilização** desse sistema para que se torne viável o seu uso naquele local.
----
 ## Por quê, então, criar uma cópia do que já existe? :thinking:
----
+
 Ora, por que não?
 
 Sendo sincero, ainda existem muitos pontos a se considerar. Mobile/Web mesmo? Por que não apenas mobile? Várias perguntas na minha cabecinha inexperiente
@@ -27,7 +25,7 @@ Sendo sincero, ainda existem muitos pontos a se considerar. Mobile/Web mesmo? Po
 Essa palavra é o motivo de criar uma cópia. Transformar a minha inexperiência em experiência. Construir a minha aplicação, com a minha visão como consumidor de algo que existe e como desenvolvedor de algo que (ainda) não existe para o meu contexto, que é uma cidade pequena, cujos moradores necessitam de um transporte não local, mas entre cidades, e que o custo dessa "corrida" é extremamente elevado caso ele decida ir de ônibus. E relativamente burocrático caso decida ir com motoristas particulares.
 
 ## Custos e burocracia: o terror do brasileiro :skull:
----
+
 Visto que temos no estado de Rondônia um certo monopólio nas empresas de transporte (deixa em off), o seu custo se torna elevado para munícipes que precisam se locomover diariamente ou 3 vezes na semana entre cidades. 
 
 Para resolver o problema, ou, facilitar essa demanda, incrementando ainda com novos empregos (autônomos), munícipes decidiram pegar o próprio carro, publicar nas redes sociais que estão se locomovendo para `X` cidade e acordar um valor entre as pessoas que precisam ir para a cidade `X` e é isso. Uma nova profissão foi criada: um motorista "particular" sem a burocracia de ter que transformar o carro em táxi, trocar placa, instalar adesivos, etc.
@@ -52,7 +50,7 @@ Dado então este cenário:
 Decidi organizar toda a transação deste mercado, criando um aplicativo que centralize toda a burocracia envolvendo a solicitação de uma corrida.
 
 ## Mas, como? :monocle_face:
----
+
 Tentarei abstrair tudo o que se dificulta ao combinar corridas nessa relação passageiro-motorista, facilitando ambas as pontas do relacionamento. Ainda em fase de pensamento apenas, não há nem protótipo de como isso pode funcionar, nem modelo de negócio, muito menos patrocínio ou apoio para essa ideia, simplesmente decidi meter a cara e fazer. Isso vai me ajudar a desenvolver melhor minhas habilidades de programação e encher minha cabeça de conhecimentos necessários.
  
 Registrarei todas as fases do projeto e cada decisão tomada utilizando as [milestones](https://github.com/oadrianrabelo/carona-mamore/milestones) e o próprio README também. As linguagens e regras do projeto serão definidos conforme a criação dele, já que não tenho uma equipe para pensar em cada detalhe, cada linha, cada regra de negócio. Mas posso separar em pequenas partes. Facilitando a minha vida e não criando um monstro gigante na qual eu ficarei preso, sem saída e acabo desistindo do projeto;
