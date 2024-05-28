@@ -1,7 +1,6 @@
 package com.rabelodev.caronaMamore.controller;
 
-import com.rabelodev.caronaMamore.controller.dto.CreateUserDTO;
-import com.rabelodev.caronaMamore.dto.UserDTO;
+import com.rabelodev.caronaMamore.controller.dto.CreateUserDto;
 import com.rabelodev.caronaMamore.entity.User;
 import com.rabelodev.caronaMamore.repository.UserRepository;
 import com.rabelodev.caronaMamore.service.UserService;
@@ -11,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -21,22 +20,23 @@ public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    private UserRepository repository;
+    private UserRepository userRepository;
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestBody CreateUserDTO userDTO) throws Exception {
+    public ResponseEntity<User> createUser(@RequestBody CreateUserDto createUserDto) throws Exception {
         LOGGER.info("Creating a new user");
-        User createdUser = service.createUser(userDTO);
-        return ResponseEntity.ok(createdUser);
+        var userId = userService.createUser(createUserDto);
+
+        return ResponseEntity.created(URI.create("/user/create/" + userId.toString())).build();
     }
 
     @GetMapping()
     public ResponseEntity<List<User>> getUsers() {
         LOGGER.info("Listing all users");
-        var listAll = service.getUsers();
+        var listAll = userService.getUsers();
         return ResponseEntity.ok(listAll);
     }
 
