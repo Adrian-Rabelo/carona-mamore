@@ -2,6 +2,7 @@ package com.rabelodev.caronaMamore.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,17 +11,17 @@ import java.util.UUID;
 
 @Entity
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "uuid", unique = true)
-    private UUID uuid;
+    @Column(name = "id", unique = true)
+    private UUID id;
 
     @Column(name = "name")
     private String name;
@@ -33,6 +34,9 @@ public class User {
 
     @Column(name = "born_date")
     private LocalDateTime bornDate;
+
+    @Column(name = "gender")
+    private String sex;
 
     @Column(name = "email")
     private String email;
