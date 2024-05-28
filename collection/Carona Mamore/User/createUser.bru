@@ -1,0 +1,28 @@
+meta {
+  name: createUser
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/user/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Vera Benedita Beatriz da Rocha",
+    "rg": "378969250",
+    "cpf": "64705231708",
+    "sex": "FEMALE",
+    "bornDate": "1968-04-16T10:15:30",
+    "email": "vera-darocha98@freitasprior.com.br",
+    "username": "vera-rocha",
+    "password": "sTcLDSoQMS",
+    "street": "Rua Ervin Dolzan",
+    "neighborhood": "Navegantes",
+    "houseNumber": "948",
+    "phoneNumber": "47984099231"
+  }
+}
