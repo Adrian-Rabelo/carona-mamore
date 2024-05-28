@@ -36,7 +36,7 @@ public class User {
     private LocalDateTime bornDate;
 
     @Column(name = "gender")
-    private String sex;
+    private String gender;
 
     @Column(name = "email")
     private String email;
