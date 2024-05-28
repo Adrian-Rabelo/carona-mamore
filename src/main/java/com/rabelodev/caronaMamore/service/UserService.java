@@ -1,14 +1,13 @@
 package com.rabelodev.caronaMamore.service;
 
 import com.rabelodev.caronaMamore.controller.UserController;
-import com.rabelodev.caronaMamore.controller.dto.CreateUserDTO;
+import com.rabelodev.caronaMamore.controller.dto.CreateUserDto;
 import com.rabelodev.caronaMamore.entity.User;
 import com.rabelodev.caronaMamore.exceptions.NullPasswordException;
 import com.rabelodev.caronaMamore.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,16 +29,16 @@ public class UserService {
     /**
      * Create a new user and saves on database
      *
-     * @param repository
-     * @param createUser
-     * @return 200 OK Response and create a new user
+     * @param createUserDTO
      * @throws NullPasswordException
      */
-    public User createUser(CreateUserDTO createUserDTO) throws NullPasswordException {
+
+    public UUID createUser(CreateUserDto createUserDTO) {
         var user = User.builder()
             .name(createUserDTO.name())
             .cpf(createUserDTO.cpf())
             .rg(createUserDTO.rg())
+            .gender(createUserDTO.gender().getDescription())
             .bornDate(createUserDTO.bornDate())
             .email(createUserDTO.email())
             .username(createUserDTO.username())
@@ -51,12 +50,15 @@ public class UserService {
             .photo(createUserDTO.photo())
             .build();
 
-        return userRepository.save(user);
+
+        var userSaved = userRepository.save(user);
+
+        return userSaved.getId();
     }
 
     public List<User> getUsers() {
 
-        return userRepository.findAllDtoByOrderByUuidAsc();
+        return userRepository.findAllDtoByOrderByIdAsc();
     }
 
     public Optional<User> updateUser(UUID uuid, User updateUser) {
