@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -32,8 +33,8 @@ public class User {
     @Column(name = "rg", nullable = false, unique = true)
     private String rg;
 
-    @Column(name = "born_date")
-    private LocalDateTime bornDate;
+    @Column(name = "birth_date")
+    private Date birthDate;
 
     @Column(name = "gender")
     private String gender;
@@ -62,12 +63,15 @@ public class User {
     @Column(name = "photo")
     private byte[] photo;
 
-    @CreationTimestamp
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    @CreationTimestamp
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private Date createdAt;
 
-    @UpdateTimestamp
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @UpdateTimestamp
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private Date updatedAt;
+
 
 }

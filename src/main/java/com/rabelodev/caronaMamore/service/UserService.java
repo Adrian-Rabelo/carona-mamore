@@ -39,7 +39,7 @@ public class UserService {
             .cpf(createUserDTO.cpf())
             .rg(createUserDTO.rg())
             .gender(createUserDTO.gender().getDescription())
-            .bornDate(createUserDTO.bornDate())
+            .birthDate(createUserDTO.birthDate())
             .email(createUserDTO.email())
             .username(createUserDTO.username())
             .password(createUserDTO.password())
