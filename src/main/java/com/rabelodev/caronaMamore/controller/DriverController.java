@@ -31,10 +31,10 @@ public class DriverController {
 
     // TODO: Refinar lógica da criação de motorista
     @PostMapping("/create")
-    public ResponseEntity<Driver> createDriver(@RequestBody Driver driver) throws Exception {
+    public ResponseEntity<Driver> createDriver(@RequestBody CreateDriverDto driverDto) throws Exception {
         LOGGER.info("Creating driver");
 
-        var driverId = driverService.createDriver(driver);
+        var driverId = driverService.createDriver(driverDto);
 
         return ResponseEntity.created(URI.create("/driver/create" + driverId.toString())).build();
     }
