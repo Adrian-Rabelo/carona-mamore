@@ -17,7 +17,7 @@ import java.util.UUID;
 @Service
 public class UserService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     private UserRepository userRepository;
