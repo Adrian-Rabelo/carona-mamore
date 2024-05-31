@@ -1,9 +1,10 @@
 version: '3'
 services:
-  database:
-    image: "postgres:16.3-alpine3.20"
-    restart: always
-    ports:
-      - "5432:5432"
-    env_file:
-      - .env.development
+    database:
+        container_name: "CaronaMamoreDatabase"
+        image: "postgres:16.3-alpine3.20"
+        restart: always
+        ports:
+            - "5432:5432"
+        env_file:
+            - .env.development
